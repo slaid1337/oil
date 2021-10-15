@@ -55,8 +55,9 @@
   <ItemGroup>
     <Compile Include="Assets/main/player/PlayerController.cs" />
     <Compile Include="Assets/main/canvas/JoystickView.cs" />
+    <Compile Include="Assets/main/CanvasController.cs" />
     <Compile Include="Assets/main/canvas/SceneLoader.cs" />
-    <Compile Include="Assets/main/MarketController.cs" />
+    <Compile Include="Assets/main/CameraTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
