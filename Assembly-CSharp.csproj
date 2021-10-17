@@ -53,11 +53,14 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets/main/CameraTarget.cs" />
     <Compile Include="Assets/main/player/PlayerController.cs" />
+    <Compile Include="Assets/main/Miner.cs" />
     <Compile Include="Assets/main/canvas/JoystickView.cs" />
+    <Compile Include="Assets/main/canvas/miniGame/MiniGameButtons.cs" />
     <Compile Include="Assets/main/CanvasController.cs" />
     <Compile Include="Assets/main/canvas/SceneLoader.cs" />
-    <Compile Include="Assets/main/CameraTarget.cs" />
+    <Compile Include="Assets/main/canvas/miniGame/ButtonSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

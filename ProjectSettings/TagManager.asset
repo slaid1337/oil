@@ -6,6 +6,7 @@ TagManager:
   tags:
   - market
   - map
+  - playButton
   layers:
   - Default
   - TransparentFX
