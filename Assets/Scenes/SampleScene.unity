@@ -988,6 +988,7 @@ MonoBehaviour:
   miniGame: {fileID: 6234083471640260336, guid: be881c6782e8c49b1a61fd2d7be56ceb,
     type: 3}
   canvas: {fileID: 527627385}
+  countButtons: 5
 --- !u!65 &1349270941
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1703,6 +1704,11 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 156684967}
+    - target: {fileID: 6008307275945270696, guid: a34b415f4f40c476798634ffbcdb49c3,
+        type: 3}
+      propertyPath: playerSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6008307275945270702, guid: a34b415f4f40c476798634ffbcdb49c3,
         type: 3}
       propertyPath: m_RootOrder

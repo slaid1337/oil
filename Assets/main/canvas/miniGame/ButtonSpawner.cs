@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonSpawner : MonoBehaviour
 {
 
-    private Vector3 spawnPosition;
-    public GameObject miniButton;
+    
     public int buttonCount;
+    public GameObject[] buttons;
+    
 
     private void Awake()
     {
 
-        gameObject.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
-        Instantiate(miniButton, Vector3.zero, Quaternion.identity, gameObject.transform);
+        Spawner();
         
+    }
 
-        
+    public void Spawner()
+    {
+        gameObject.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
+        Instantiate(buttons[Random.Range(0, 3)], Vector3.zero, Quaternion.identity, gameObject.transform);
+        buttonCount--;
+        Debug.Log(buttonCount);
     }
 }

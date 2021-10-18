@@ -36,6 +36,7 @@ public class MiniGameButtons : MonoBehaviour
 
     public void PointUp()
     {
+        gameObject.transform.parent.GetComponent<ButtonSpawner>().Spawner();
         Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ public class Miner : MonoBehaviour
     public Image miniGame;
     public GameObject canvas;
     private Button playButton;
-
+    public int countButtons;
 
     
 
@@ -20,6 +20,7 @@ public class Miner : MonoBehaviour
         {
             Instantiate(playButtonPref, Vector3.down, Quaternion.identity, canvas.transform);
             playButtonObject = GameObject.FindGameObjectWithTag("playButton");
+            playButtonObject.GetComponent<RectTransform>().localPosition = new Vector2(0f,20f);
             playButton = playButtonObject.GetComponent<Button>();
             playButton.onClick.AddListener(delegate () { MiniGameStart(); });
         }
@@ -41,6 +42,7 @@ public class Miner : MonoBehaviour
     public void MiniGameStart()
     {
         Instantiate(miniGame, Vector3.zero, Quaternion.identity, canvas.transform);
+        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().buttonCount = countButtons;
         Destroy(playButtonObject);
     }
 
