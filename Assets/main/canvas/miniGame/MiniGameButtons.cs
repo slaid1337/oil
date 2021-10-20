@@ -21,6 +21,9 @@ public class MiniGameButtons : MonoBehaviour
         spawnPosition = new Vector3(Random.Range(-posHorizontal, posHorizontal), Random.Range(-posVertical, posVertical));
 
         gameObject.GetComponent<RectTransform>().localPosition = spawnPosition;
+
+        StartCoroutine(LoseGame(speed * 4));
+        
     }
 
     private void Update()
@@ -39,4 +42,13 @@ public class MiniGameButtons : MonoBehaviour
         gameObject.transform.parent.GetComponent<ButtonSpawner>().Spawner();
         Destroy(gameObject);
     }
+
+    IEnumerator LoseGame(float time)
+    {
+        
+        yield return new WaitForSeconds(time);
+        Debug.Log("u lose");
+        Destroy(gameObject.transform.parent.gameObject);
+    }
+
 }

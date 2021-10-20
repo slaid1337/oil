@@ -43,6 +43,7 @@ public class Miner : MonoBehaviour
     {
         Instantiate(miniGame, Vector3.zero, Quaternion.identity, canvas.transform);
         GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().buttonCount = countButtons;
+        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().Spawner();
         Destroy(playButtonObject);
     }
 

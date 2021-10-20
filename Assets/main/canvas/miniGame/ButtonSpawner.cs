@@ -11,18 +11,24 @@ public class ButtonSpawner : MonoBehaviour
     public GameObject[] buttons;
     
 
-    private void Awake()
-    {
-
-        Spawner();
-        
-    }
+    
 
     public void Spawner()
     {
-        gameObject.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
-        Instantiate(buttons[Random.Range(0, 3)], Vector3.zero, Quaternion.identity, gameObject.transform);
-        buttonCount--;
-        Debug.Log(buttonCount);
+        if (buttonCount != 0)
+        {
+            gameObject.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
+            Instantiate(buttons[Random.Range(0, 3)], Vector3.zero, Quaternion.identity, gameObject.transform);
+            buttonCount--;
+        }
+        else
+        {
+            Debug.Log("u won");
+            Destroy(gameObject);
+            
+        }
+
+        
+        
     }
 }
