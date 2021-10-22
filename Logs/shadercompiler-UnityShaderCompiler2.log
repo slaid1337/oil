@@ -2,5 +2,3 @@ Base path: '/Volumes/HDD/unity/2020.3.16f1/Unity.app/Contents', plugins path '/V
 Cmd: initializeCompiler
 
 Cmd: shutdown
-
-Quitting shader compiler process

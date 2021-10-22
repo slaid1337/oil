@@ -12,7 +12,12 @@ public class Miner : MonoBehaviour
     private Button playButton;
     public int countButtons;
 
-    
+
+    private void Start()
+    {
+        GameController.current.OnTrigger += LogFile;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +28,7 @@ public class Miner : MonoBehaviour
             playButtonObject.GetComponent<RectTransform>().localPosition = new Vector2(0f,20f);
             playButton = playButtonObject.GetComponent<Button>();
             playButton.onClick.AddListener(delegate () { MiniGameStart(); });
+            GameController.current.OnTriigerEnterPoint();
         }
         
     }
@@ -47,4 +53,8 @@ public class Miner : MonoBehaviour
         Destroy(playButtonObject);
     }
 
+    public void LogFile()
+    {
+        Debug.Log("gsdgs");
+    }
 }
