@@ -11,11 +11,12 @@ public class Miner : MonoBehaviour
     public GameObject canvas;
     private Button playButton;
     public int countButtons;
+    public int RewardForWin;
 
 
     private void Start()
     {
-        GameController.current.OnTrigger += LogFile;
+
     }
 
 
@@ -28,7 +29,7 @@ public class Miner : MonoBehaviour
             playButtonObject.GetComponent<RectTransform>().localPosition = new Vector2(0f,20f);
             playButton = playButtonObject.GetComponent<Button>();
             playButton.onClick.AddListener(delegate () { MiniGameStart(); });
-            GameController.current.OnTriigerEnterPoint();
+            
         }
         
     }
@@ -50,11 +51,12 @@ public class Miner : MonoBehaviour
         Instantiate(miniGame, Vector3.zero, Quaternion.identity, canvas.transform);
         GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().buttonCount = countButtons;
         GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().Spawner();
+        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().rewardForWin = RewardForWin;
         Destroy(playButtonObject);
     }
 
     public void LogFile()
     {
-        Debug.Log("gsdgs");
+        
     }
 }

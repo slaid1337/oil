@@ -9,23 +9,27 @@ public class GameController : MonoBehaviour
     public int oil;
     public Text oilText;
 
-    public static GameController current;
+
+    
+
+    
 
     private void Start()
     {
-        current = this;
         
         oilText.text = oil.ToString();
+        
     }
 
-    public event Action OnTrigger;
+    
 
-    public void OnTriigerEnterPoint()
+
+    public void Win(int i)
     {
-        if (OnTrigger != null)
-        {
-            OnTrigger();
-        }
+        oil += i;
+        this.oilText.text = oil.ToString();
     }
+
+    
 
 }

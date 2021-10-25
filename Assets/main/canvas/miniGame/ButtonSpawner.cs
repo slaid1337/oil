@@ -9,9 +9,14 @@ public class ButtonSpawner : MonoBehaviour
     
     public int buttonCount;
     public GameObject[] buttons;
-    
+    private GameObject gameController;
+    public int rewardForWin;
 
-    
+
+    private void Start()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController");
+    }
 
     public void Spawner()
     {
@@ -23,12 +28,18 @@ public class ButtonSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("u won");
+            WinGame(rewardForWin);
             Destroy(gameObject);
             
         }
 
         
+        
+    }
+
+    public void WinGame(int oil)
+    {
+        gameController.GetComponent<GameController>().Win(oil);
         
     }
 }
