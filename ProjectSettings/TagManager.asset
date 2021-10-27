@@ -9,6 +9,7 @@ TagManager:
   - playButton
   - challengeButton
   - miniGame
+  - secret
   layers:
   - Default
   - TransparentFX

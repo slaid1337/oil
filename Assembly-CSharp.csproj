@@ -56,13 +56,14 @@
     <Compile Include="Assets/main/CameraTarget.cs" />
     <Compile Include="Assets/main/GameController.cs" />
     <Compile Include="Assets/main/player/PlayerController.cs" />
-    <Compile Include="Assets/main/Miner.cs" />
+    <Compile Include="Assets/main/canvas/OilText.cs" />
+    <Compile Include="Assets/main/mining places/Miner.cs" />
     <Compile Include="Assets/main/canvas/JoystickView.cs" />
     <Compile Include="Assets/main/canvas/miniGame/ButtonSpawner.cs" />
     <Compile Include="Assets/main/canvas/miniGame/MiniGameButtons.cs" />
     <Compile Include="Assets/main/CanvasController.cs" />
     <Compile Include="Assets/main/canvas/SceneLoader.cs" />
-    <Compile Include="Assets/main/canvas/OilText.cs" />
+    <Compile Include="Assets/main/robospider/SpiderController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -679,6 +680,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{59B82A48-0CF3-EB80-B2B7-B69565AAF74B}</Project>
+      <Name>NavMeshComponents</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{F74BBCC6-3F6B-66AE-E2F7-2F0443673C13}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
