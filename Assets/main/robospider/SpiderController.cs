@@ -37,14 +37,6 @@ public class SpiderController : MonoBehaviour
 
     private void Update()
     {
-        ChasePlayer();
-    }
-
-    private void ChasePlayer()
-    {
         agent.SetDestination(searchObject.transform.position);
-
-
-
-    }
+    }    
 }

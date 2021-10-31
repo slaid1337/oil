@@ -13,12 +13,10 @@ public class Miner : MonoBehaviour
     public int countButtons;
     public int RewardForWin;
 
-
     private void Start()
     {
-
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -55,8 +53,5 @@ public class Miner : MonoBehaviour
         Destroy(playButtonObject);
     }
 
-    public void LogFile()
-    {
-        
-    }
+    
 }

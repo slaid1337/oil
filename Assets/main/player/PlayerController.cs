@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 JoyPosition;
     public JoystickView movement;
 
+    public float bankVolume;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();

@@ -10,6 +10,8 @@ TagManager:
   - challengeButton
   - miniGame
   - secret
+  - Canvas
+  - spider
   layers:
   - Default
   - TransparentFX
