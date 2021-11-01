@@ -15,10 +15,19 @@ public class PlayerController : MonoBehaviour
 
     public float bankVolume;
 
+    private GameObject[] wheels;
+    private GameObject wheel1;
+    private GameObject wheel2;
+
+
+
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
-        
+        wheels = GameObject.FindGameObjectsWithTag("wheel");
+        wheel1 = wheels[0];
+        wheel2 = wheels[1];
     }
 
     private void FixedUpdate()
@@ -31,7 +40,10 @@ public class PlayerController : MonoBehaviour
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            wheel1.transform.Rotate(new Vector3(0, -move.magnitude * 10f, 0));
+            wheel2.transform.Rotate(new Vector3(0, -move.magnitude * 10f, 0));
         }
+
     }
 
 }

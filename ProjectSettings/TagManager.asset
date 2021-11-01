@@ -12,6 +12,7 @@ TagManager:
   - secret
   - Canvas
   - spider
+  - wheel
   layers:
   - Default
   - TransparentFX

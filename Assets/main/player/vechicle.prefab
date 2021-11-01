@@ -128,3 +128,4 @@ MonoBehaviour:
   joyStick: {fileID: 0}
   playerSpeed: 100
   movement: {fileID: 0}
+  bankVolume: 0
