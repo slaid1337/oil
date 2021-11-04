@@ -14,13 +14,20 @@ public class GameController : MonoBehaviour
     private Vector3 currentScale;
     private float value;
 
+    public GameObject robotPref;
+    private bool robotStatus;
+
+    private GameObject vechicle;
 
     private void Start()
     {
         winning = false;
         Volume = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bankVolume;
+        vechicle = GameObject.FindGameObjectWithTag("Player");
         oilBar.GetComponent<RectTransform>().localScale = new Vector3(1,(oil / (Volume / 100)) / 100,1);
         value = 0;
+        robotStatus = true;
+        Screen.orientation = ScreenOrientation.Landscape;
     }
 
     private void Update()
@@ -28,12 +35,20 @@ public class GameController : MonoBehaviour
 
         if (winning)
         {
+
+            if (oil >= Volume)
+            {
+                oil = Convert.ToInt32(Volume);
+            }
+            
             oilBar.GetComponent<RectTransform>().localScale = Vector3.Lerp(currentScale, new Vector3(1, (oil / (Volume / 100)) / 100, 1), value);
             value += Time.deltaTime * 0.5f;
-            if ( value >= 1)
+            if (value >= 1)
             {
                 winning = false;
             }
+            
+            
         }
          
            
@@ -50,6 +65,12 @@ public class GameController : MonoBehaviour
         winning = true;
     }
 
-    
+    public void RobotActivation()
+    {
+        if (robotStatus)
+        {
+            Instantiate(robotPref,vechicle.transform.position + new Vector3(0,0,2f),Quaternion.identity);
+        }
+    }
 
 }

@@ -16,18 +16,17 @@ public class Miner : MonoBehaviour
     private void Start()
     {
         canvas = GameObject.FindGameObjectWithTag("Canvas");
+        playButtonObject = GameObject.FindGameObjectWithTag("playButton");
+        playButton = playButtonObject.GetComponent<Button>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            Instantiate(playButtonPref, Vector3.down, Quaternion.identity, canvas.transform);
-            playButtonObject = GameObject.FindGameObjectWithTag("playButton");
-            playButtonObject.GetComponent<RectTransform>().localPosition = new Vector2(0f,20f);
-            playButton = playButtonObject.GetComponent<Button>();
+            playButton.GetComponent<Image>().enabled = true;
+            playButton.onClick.RemoveAllListeners();
             playButton.onClick.AddListener(delegate () { MiniGameStart(); });
-            
         }
         
     }
@@ -35,7 +34,7 @@ public class Miner : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Destroy(playButtonObject);
+            playButton.GetComponent<Image>().enabled = false;
         }
     }
 
@@ -47,10 +46,11 @@ public class Miner : MonoBehaviour
     public void MiniGameStart()
     {
         Instantiate(miniGame, Vector3.zero, Quaternion.identity, canvas.transform);
-        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().buttonCount = countButtons;
-        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().Spawner();
-        GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>().rewardForWin = RewardForWin;
-        Destroy(playButtonObject);
+        ButtonSpawner btn= GameObject.FindGameObjectWithTag("miniGame").GetComponent<ButtonSpawner>();
+        btn.buttonCount = countButtons;
+        btn.Spawner();
+        btn.rewardForWin = RewardForWin;
+        playButton.GetComponent<Image>().enabled = false;
     }
 
     

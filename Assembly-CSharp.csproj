@@ -56,15 +56,17 @@
     <Compile Include="Assets/main/CameraTarget.cs" />
     <Compile Include="Assets/main/GameController.cs" />
     <Compile Include="Assets/main/player/PlayerController.cs" />
-    <Compile Include="Assets/main/canvas/OilText.cs" />
     <Compile Include="Assets/main/mining places/Miner.cs" />
+    <Compile Include="Assets/main/mining places/SecretMiner.cs" />
     <Compile Include="Assets/main/canvas/JoystickView.cs" />
     <Compile Include="Assets/main/canvas/miniGame/ButtonSpawner.cs" />
     <Compile Include="Assets/main/canvas/miniGame/MiniGameButtons.cs" />
     <Compile Include="Assets/main/robospider/SpiderController.cs" />
     <Compile Include="Assets/main/CanvasController.cs" />
     <Compile Include="Assets/main/canvas/SceneLoader.cs" />
-    <Compile Include="Assets/main/mining places/SecretMiner.cs" />
+    <Compile Include="Assets/main/canvas/robot/RobotConstructorController.cs" />
+    <Compile Include="Assets/main/canvas/robot/BlocksDrag.cs" />
+    <Compile Include="Assets/main/canvas/robot/PlaceController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

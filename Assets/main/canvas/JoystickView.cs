@@ -25,7 +25,6 @@ public class JoystickView : MonoBehaviour , IDragHandler , IPointerDownHandler ,
     {
         background.gameObject.SetActive(true);
         input = Vector2.zero;
-        OnDrag(eventData);
         JoyPosition = eventData.position;
         background.position = eventData.position;
         Handle.anchoredPosition = Vector2.zero;
