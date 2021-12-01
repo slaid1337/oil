@@ -13,29 +13,22 @@ TagManager:
   - Canvas
   - spider
   - wheel
+  - house
+  - constructor
+  - cell6
   - cell1
   - cell2
-  - cell3
-  - cell4
   - cell5
-  - cell6
-  - cell7
-  - cell8
-  - cell9
-  - cell10
-  - cell11
-  - cell12
-  - constructor
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - post-proc
-  - 
-  - 
+  - marshmellow
+  - Player
   - 
   - 
   - 

@@ -53,9 +53,18 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets/QuickOutline/Scripts/Outline.cs" />
+    <Compile Include="Assets/main/test/testShader.cs" />
+    <Compile Include="Assets/main/location/FadingObject.cs" />
+    <Compile Include="Assets/main/mob/boss/MarshmellowBoss.cs" />
+    <Compile Include="Assets/main/mob/MarshmellowController.cs" />
+    <Compile Include="Assets/main/canvas/robot/BlocksDrag.cs" />
+    <Compile Include="Assets/main/canvas/robot/RobotConstructorController.cs" />
     <Compile Include="Assets/main/CameraTarget.cs" />
+    <Compile Include="Assets/main/canvas/robot/PlaceController.cs" />
     <Compile Include="Assets/main/GameController.cs" />
     <Compile Include="Assets/main/player/PlayerController.cs" />
+    <Compile Include="Assets/main/mob/boss/DirectioinsGenerator.cs" />
     <Compile Include="Assets/main/mining places/Miner.cs" />
     <Compile Include="Assets/main/mining places/SecretMiner.cs" />
     <Compile Include="Assets/main/canvas/JoystickView.cs" />
@@ -64,9 +73,26 @@
     <Compile Include="Assets/main/robospider/SpiderController.cs" />
     <Compile Include="Assets/main/CanvasController.cs" />
     <Compile Include="Assets/main/canvas/SceneLoader.cs" />
-    <Compile Include="Assets/main/canvas/robot/RobotConstructorController.cs" />
-    <Compile Include="Assets/main/canvas/robot/BlocksDrag.cs" />
-    <Compile Include="Assets/main/canvas/robot/PlaceController.cs" />
+    <Compile Include="Assets/main/mob/boss/fireFluid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Rocks_Scenes/Troubleshooting_textured_scenes_TX.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/shaders/PolyboxCore.cginc" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Stones_Scenes/Stones_Textured_lightmapped_scenes/Troubleshooting_textured_scenes_TX.txt" />
+    <None Include="Assets/main/test/test.shader" />
+    <None Include="Assets/QuickOutline/Resources/Shaders/OutlineMask.shader" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Rocks_Scenes/Rocks_Textured_lightmapped_scenes/Troubleshooting_textured_scenes_TX.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Cliffs_Scenes/Cliffs_Textured_lightmapped_scenes/Troubleshooting_lightmap_issues_LM.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Cliffs_Scenes/Cliffs_Textured_lightmapped_scenes/Troubleshooting_textured_scenes_TX.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Stones_Scenes/Stones_Textured_lightmapped_scenes/Troubleshooting_lightmap_issues_LM.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/shaders/PolyboxStandard.shader" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/shaders/PolyboxCoreForward.cginc" />
+    <None Include="Assets/QuickOutline/Readme.txt" />
+    <None Include="Assets/main/test/Surfacefluidshmello.shader" />
+    <None Include="Assets/main/test/testShader.shader" />
+    <None Include="Assets/QuickOutline/Resources/Shaders/OutlineFill.shader" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/scenes/Rocks_Scenes/Rocks_Textured_lightmapped_scenes/Troubleshooting_lightmap_issues_LM.txt" />
+    <None Include="Assets/Polyquest Worlds Full Pack Vol.1/shaders/PolyboxCoreForwardSimple.cginc" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

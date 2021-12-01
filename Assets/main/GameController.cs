@@ -10,30 +10,31 @@ public class GameController : MonoBehaviour
     public int oldOil;
     public GameObject oilBar;
     public float Volume;
-    public bool winning;
+    public bool barCharging;
     private Vector3 currentScale;
     private float value;
 
     public GameObject robotPref;
-    private bool robotStatus;
+    public bool robotStatus;
+    public GameObject[] miniGamePrefs;
 
     private GameObject vechicle;
 
     private void Start()
     {
-        winning = false;
+        barCharging = false;
         Volume = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bankVolume;
         vechicle = GameObject.FindGameObjectWithTag("Player");
         oilBar.GetComponent<RectTransform>().localScale = new Vector3(1,(oil / (Volume / 100)) / 100,1);
         value = 0;
-        robotStatus = true;
+        robotStatus = false;
         Screen.orientation = ScreenOrientation.Landscape;
     }
 
     private void Update()
     {
 
-        if (winning)
+        if (barCharging)
         {
 
             if (oil >= Volume)
@@ -45,7 +46,7 @@ public class GameController : MonoBehaviour
             value += Time.deltaTime * 0.5f;
             if (value >= 1)
             {
-                winning = false;
+                barCharging = false;
             }
             
             
@@ -62,7 +63,7 @@ public class GameController : MonoBehaviour
         Volume = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().bankVolume;
         value = 0;
         currentScale = new Vector3(1, oilBar.GetComponent<RectTransform>().localScale.y, 1);
-        winning = true;
+        barCharging = true;
     }
 
     public void RobotActivation()
@@ -70,6 +71,11 @@ public class GameController : MonoBehaviour
         if (robotStatus)
         {
             Instantiate(robotPref,vechicle.transform.position + new Vector3(0,0,2f),Quaternion.identity);
+            robotStatus = false;
+        }
+        else
+        {
+            Instantiate(miniGamePrefs[UnityEngine.Random.Range(0,miniGamePrefs.Length)],GameObject.FindGameObjectWithTag("Canvas").transform);
         }
     }
 
